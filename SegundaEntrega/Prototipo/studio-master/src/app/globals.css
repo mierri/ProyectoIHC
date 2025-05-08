@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 200 60% 96%; /* Lighter soft blue */
+    --foreground: 210 25% 30%; /* Dark grayish blue */
+
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 210 25% 30%; /* Dark grayish blue */
+
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 210 25% 30%; /* Dark grayish blue */
+
+    --primary: 180 100% 25%; /* Teal */
+    --primary-foreground: 180 100% 95%; /* Very light teal/white */
+
+    --secondary: 0 0% 90%; /* Light Gray */
+    --secondary-foreground: 0 0% 25%; /* Dark gray */
+
+    --muted: 0 0% 92%; /* Lighter gray for muted backgrounds */
+    --muted-foreground: 0 0% 45%; /* Medium gray for muted text */
+
+    --accent: 200 60% 83%; /* Soft Blue */
+    --accent-foreground: 200 60% 25%; /* Darker blue for text on soft blue */
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 200 30% 85%; /* Subtle blue-gray border */
+    --input: 200 30% 92%; /* Subtle blue-gray input background */
+    --ring: 180 100% 35%; /* Slightly lighter Teal for focus rings */
+
+    --radius: 0.5rem;
+
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+
+    /* Sidebar specific colors - retain if sidebar component is used elsewhere or by default */
+    --sidebar-background: 200 60% 92%; /* Lighter soft blue variant for sidebar */
+    --sidebar-foreground: 210 25% 20%; /* Darker blue for sidebar text */
+    --sidebar-primary: 180 100% 25%; /* Teal for sidebar primary actions */
+    --sidebar-primary-foreground: 180 100% 95%; /* Light text on teal */
+    --sidebar-accent: 200 60% 83%; /* Soft blue for sidebar accents */
+    --sidebar-accent-foreground: 200 60% 25%; /* Darker blue on soft blue accent */
+    --sidebar-border: 200 30% 80%; /* Softer blue-gray border for sidebar */
+    --sidebar-ring: 180 100% 35%; /* Teal for sidebar focus rings */
+  }
+
+  .dark {
+    --background: 210 20% 10%; /* Dark blue-gray */
+    --foreground: 210 30% 90%; /* Light blue-gray */
+
+    --card: 210 20% 12%; /* Slightly lighter dark blue-gray */
+    --card-foreground: 210 30% 90%;
+
+    --popover: 210 20% 10%;
+    --popover-foreground: 210 30% 90%;
+
+    --primary: 180 100% 35%; /* Brighter Teal for dark mode */
+    --primary-foreground: 180 20% 98%;
+
+    --secondary: 210 15% 25%; /* Darker Gray */
+    --secondary-foreground: 210 20% 80%;
+
+    --muted: 210 15% 20%;
+    --muted-foreground: 210 20% 60%;
+
+    --accent: 200 50% 40%; /* Darker Soft Blue */
+    --accent-foreground: 200 30% 95%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 210 15% 30%;
+    --input: 210 15% 35%;
+    --ring: 180 100% 45%; /* Brighter Teal for dark mode rings */
+    
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+
+    /* Dark Sidebar specific colors */
+    --sidebar-background: 210 20% 12%;
+    --sidebar-foreground: 210 30% 85%;
+    --sidebar-primary: 180 100% 35%;
+    --sidebar-primary-foreground: 180 20% 98%;
+    --sidebar-accent: 200 50% 40%;
+    --sidebar-accent-foreground: 200 30% 95%;
+    --sidebar-border: 210 15% 25%;
+    --sidebar-ring: 180 100% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Use preloaded Geist font by default, remove Arial override */
+  }
+  /* Increase base font size for accessibility */
+  html {
+    @apply text-base; /* Tailwind's base, can be overridden by text-lg etc. where needed */
+  }
+}
+
+/* Custom larger text sizes for easier readability */
+.text-display {
+  @apply text-4xl font-bold md:text-5xl;
+}
+.text-header {
+  @apply text-3xl font-semibold md:text-4xl;
+}
+.text-subheader {
+  @apply text-2xl font-medium md:text-3xl;
+}
+.text-body-lg {
+  @apply text-xl md:text-2xl;
+}
+.text-body-md {
+  @apply text-lg md:text-xl;
+}
+.text-body-sm {
+  @apply text-base md:text-lg;
+}
